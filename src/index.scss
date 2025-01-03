@@ -8,10 +8,11 @@
   text-decoration: none;
 }
 
-
-
-
-
-
-
 @import './media';
+
+
+.salad-maker-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
