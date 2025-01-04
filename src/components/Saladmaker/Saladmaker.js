@@ -1,5 +1,10 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import Saladbuilder from '../Saladbuilder/Saladbuilder';
+import Saladsummary from '../Saladsummary/Saladsummary';
+
+function reducer(state, item) {
+  return [...state, item]
+}
 
 function Saladmaker() {
 
@@ -11,8 +16,11 @@ function Saladmaker() {
         <span role='img' aria-label='salad'>🥗</span>
       </h1>
       <Saladbuilder/>
+      <Saladsummary/>
     </>
   )
 }
+
+export const Saladcontext = createContext();
 
 export default Saladmaker;
