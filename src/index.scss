@@ -29,6 +29,14 @@
   align-items: center;
 }
 
+.salad-summary-wrapper {
+  display: flex;
+  justify-content: space-between;
+  
+/*   position: absolute;
+  bottom: 10px; */
+}
+
 @import './media';
 
 
