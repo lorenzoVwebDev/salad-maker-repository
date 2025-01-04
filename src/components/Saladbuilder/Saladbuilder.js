@@ -2,7 +2,7 @@ import React from 'react';
 import Saladitem from '../Saladitem/Saladitem'
 import { ingredients } from '../../data/saladData'
 
-function SaladBuilder() {
+function Saladbuilder() {
   return (
     <div className="salad-builder-wrapper">
       {

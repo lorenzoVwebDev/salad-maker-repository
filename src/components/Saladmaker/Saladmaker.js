@@ -1,4 +1,6 @@
 import React from 'react';
+import Saladbuilder from '../Saladbuilder/Saladbuilder';
+import Saladsummary from '../Saladsummary/Saladsummary'
 
 function Saladmaker() {
 
@@ -9,6 +11,8 @@ function Saladmaker() {
         Build Your Custom Salad!
         <span role='img' aria-label='salad'>🥗</span>
       </h1>
+      <Saladbuilder/>
+      <Saladsummary/>
     </>
   )
 }

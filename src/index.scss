@@ -12,6 +12,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: calc(1vw + 1vh);
+}
+
+.salad-builder-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  row-gap: calc(1vw + 1vh);
+}
+
+.salad-item-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: calc(0.5vw + 0.5vh);
+  align-items: center;
 }
 
 @import './media';
