@@ -31,6 +31,7 @@
 .salad-builder-wrapper {
   display: grid;
   grid-template-columns: repeat(4, auto);
+  gap: calc(7.5vw + 7.5vh);
   row-gap: calc(1vw + 1vh);
 }
 
@@ -44,7 +45,14 @@
 
 .salad-summary-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
+  border-top: solid 1px black;
+  margin-top: 1vh;
+  padding-right: calc(1.5vw + 1.5vh);
+  padding-left: calc(1.5vw + 1.5vh);
+  & .max-quantity {
+    color: red;
+  }
   
 /*   position: absolute;
   bottom: 10px; */
