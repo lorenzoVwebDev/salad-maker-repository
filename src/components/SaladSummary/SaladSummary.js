@@ -3,7 +3,7 @@
 
 function SaladSummary() {
   const [ reload, setReload] = useState(false)
-  const { salad, setTotalQuantity, totalQuantity, setSalad } = useContext(SaladContext);
+  const { salad, setSalad } = useContext(SaladContext);
 
   const update = (type, itemName) => {
     setSalad({
@@ -12,9 +12,13 @@ function SaladSummary() {
         name: itemName
       }
     })
+    setReload(!reload);
   }
 
-  console.log(salad)
+  const totalQuantity = salad.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue.quantity
+  }, 0)
+
   return (
     <div className="salad-summary-wrapper">
       <ul>
@@ -26,7 +30,7 @@ function SaladSummary() {
               setReload(!reload);
             }, 1500)
           }
-          setTotalQuantity(totalQuantity + item?.quantity)
+          
           return (
           <>
             <h6></h6>
@@ -37,7 +41,7 @@ function SaladSummary() {
           )
         })
       }
-        <h4 className="max-quantity">{totalQuantity>=6 || salad.length >=6 ? 'Max quantity has been reached!':''}</h4>
+        <h4 className="max-quantity">{salad.length>=6 || totalQuantity>=6?'Max quantity has been reached!':''}</h4>
       </ul>
     </div>
   )

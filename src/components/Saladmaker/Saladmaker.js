@@ -11,20 +11,23 @@ function reducer(state, action) {
   state.forEach(ingredient => {
     totalQuantity += ingredient?.quantity
   })
-  //console.log(totalQuantity)
+
   if (action.actionType === 'add') {
-    if (state.length < 6 || totalQuantity < 5) {
+    if (state.length <= 6 && totalQuantity <= 5) {
       return add(state, action.item)
     } else {
       return state
     };
-  }
+  } else if (action.actionType === 'remove') {
+        return remove(state, action.item)
+    }
+
 } 
+
 
 function SaladMaker() {
 const [ salad, setSalad ] = useReducer(reducer, []);
-const [ totalQuantity, setTotalQuantity] = useState();
-//console.log(salad)
+const [totQuantity, setTotalQuantity] = useState()
 return (
   <>
     <h1 className="salad-maker-wrapper"><span>🍎</span>Build your own salad!<span>🥦</span></h1>
@@ -32,8 +35,8 @@ return (
         value={{
           salad,
           setSalad,
-          setTotalQuantity,
-          totalQuantity
+          totQuantity,
+          setTotalQuantity
         }}
       >
         <SaladBuilder/>
