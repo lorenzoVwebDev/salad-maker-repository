@@ -1,25 +1,12 @@
-import React, { useContext } from 'react';
-import { createUseStyles } from 'react-jss';
-import UserContext from '../User/User';
+import { useContext } from 'react';
+import UserContext from '../UserContext/UserContext';
 
-const useStyles = createUseStyles({
-  wrapper: {
-    display: 'flex',
-    justifyContent: 'right',
-    alignItems: 'center',
-    borderBottom: 'solid 1px black',
-    height: 'calc(2vw + 2vh)',
-    paddingRight: '2vw'
-  }
-})
 function Navigation() {
   const user = useContext(UserContext);
-  const classes = useStyles();
-    return (
-    <div className={classes.wrapper}>
-      Welcome, {user.name}
-    </div>
+
+  return (
+    <header className="salad-navigation-header">Welcome<span>{user.name}</span></header>
   )
 }
 
-export default Navigation;
+export default Navigation

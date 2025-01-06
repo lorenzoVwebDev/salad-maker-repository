@@ -8,6 +8,19 @@
   text-decoration: none;
 }
 
+.salad-navigation-header {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  height: calc(2.5vw + 2.5vh);
+  border-bottom: solid 1px black;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  & span {
+    margin-left: 1vw;
+  }
+}
+
 .salad-maker-wrapper {
   display: flex;
   justify-content: center;

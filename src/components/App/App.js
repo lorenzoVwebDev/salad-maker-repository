@@ -1,8 +1,6 @@
-import './App.css';
-import Navigation from '../Navigation/Navigation';
-import Saladmaker from '../Saladmaker/Saladmaker.js';
-import Saladsummary from '../Saladsummary/Saladsummary';
-import UserContext from '../User/User.js';
+import UserContext from "../UserContext/UserContext";
+import Navigation from "../Navigation/Navigation"
+import SaladMaker from "../SaladMaker/SaladMaker";
 
 const user = {
   name: 'Lorenzo',
@@ -14,12 +12,9 @@ const user = {
 
 function App() {
   return (
-    <div>
-      <UserContext.Provider value={user}>
+    <UserContext.Provider value={user}>
       <Navigation/>
-      <Saladmaker/>
-      </UserContext.Provider>
-    </div>
+    </UserContext.Provider>
   );
 }
 
