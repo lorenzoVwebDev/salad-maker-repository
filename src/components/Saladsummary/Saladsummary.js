@@ -1,16 +1,21 @@
-import React from 'react';
-import { Footer } from 'flowbite-react';
+import React, { useContext } from 'react';
+import { Saladcontext } from '../Saladmaker/Saladmaker.js'
 
 function Saladsummary() {
+  const { salad } = useContext(Saladcontext);
   return (
-    <footer className="salad-summary-wrapper">
+    <div className="salad-summary-wrapper">
       <h2>Your Salad</h2>
       <ul className="salad-summary-list">
-        <li>Apple</li>
-        <li>Avocado</li>
-        <li>Carrots</li>
+        {
+          salad.map(ingredient => {
+            return (
+              <li key={ingredient.id}>{ingredient.name}</li>
+            )
+          })
+        }
       </ul>
-    </footer>
+    </div>
   )
 }
 

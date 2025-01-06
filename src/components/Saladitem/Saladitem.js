@@ -1,15 +1,23 @@
-import React, { useContext } from 'react';
-import { createUseStyles } from 'react-jss';
+import React, { useContext, useReducer } from 'react';
 import Usercontext from '../User/User'
+import { Saladcontext } from '../Saladmaker/Saladmaker.js';
 
-const useStyles = createUseStyles({
-
-})
+const reducer = id => id + 1;
 function Saladitem({
   image, name
 }) {
-
   const user = useContext(Usercontext);
+  const { setSalad } = useContext(Saladcontext);
+  const [ id, updatedId ] = useReducer(reducer, 0);
+
+  function update() {
+    setSalad({
+      name,
+      id: `${name}--${id}`
+    })
+
+    updatedId()
+  }
 
   return (
     <div className="salad-item-wrapper">
