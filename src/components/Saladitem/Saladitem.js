@@ -29,7 +29,7 @@ function Saladitem({
   })}>
         {user.favourites.includes(name) ? '😋':''}
       </span>
-      <button className="item-add-buttom">
+      <button className="item-add-button" onClick={() => update()}>
         <span className="item-image">
           {image}
         </span>
