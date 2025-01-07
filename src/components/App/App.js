@@ -1,6 +1,6 @@
-import UserContext from "../UserContext/UserContext";
+import UserContext from "../Usercontext/Usercontext";
 import Navigation from "../Navigation/Navigation"
-import SaladMaker from "../SaladMaker/SaladMaker";
+import SaladMaker from "../Saladmaker/Saladmaker";
 
 const user = {
   name: 'Lorenzo',

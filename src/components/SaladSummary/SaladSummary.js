@@ -1,5 +1,5 @@
   import { useContext, useState } from "react";
-  import { SaladContext } from "../SaladMaker/SaladMaker";
+  import { SaladContext } from "../Saladmaker/Saladmaker";
 
 function SaladSummary() {
   const [ reload, setReload] = useState(false)

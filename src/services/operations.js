@@ -1,4 +1,3 @@
-
 export const add = (state, item) => {
   let bool = false
   const renderState = state;

@@ -1,6 +1,6 @@
 import { useContext, useReducer, useState } from 'react';
-import { SaladContext } from '../SaladMaker/SaladMaker';
-import UserContext from '../UserContext/UserContext';
+import { SaladContext } from '../Saladmaker/Saladmaker';
+import UserContext from '../Usercontext/Usercontext';
 
 function reducer(itemsQuantity, state) {
   let totalQuantity = 0;

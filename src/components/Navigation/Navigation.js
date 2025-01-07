@@ -1,8 +1,8 @@
 import { useContext } from 'react';
-import UserContext from '../UserContext/UserContext';
+import Usercontext from '../Usercontext/Usercontext';
 
 function Navigation() {
-  const user = useContext(UserContext);
+  const user = useContext(Usercontext);
 
   return (
     <header className="salad-navigation-header">Welcome<span>{user.name}</span></header>
