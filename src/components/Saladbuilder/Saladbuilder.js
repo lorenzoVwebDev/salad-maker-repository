@@ -1,23 +1,20 @@
-import React from 'react';
-import Saladitem from '../Saladitem/Saladitem'
 import { ingredients } from '../../data/saladData'
+import SaladItem from "../SaladItem/SaladItem"
 
-function Saladbuilder() {
+function SaladBuilder() {
   return (
     <div className="salad-builder-wrapper">
-      {
-        ingredients.map(ingredient => {
-          return (
-            <Saladitem
+      {ingredients.map(ingredient => {
+        return (
+            <SaladItem
               key={ingredient.name}
-              image={ingredient.image}
               name={ingredient.name}
+              image={ingredient.image}
             />
-          )
-        })
-      }
+        )
+      })}
     </div>
   )
 }
 
-export default Saladbuilder;
+export default SaladBuilder;
