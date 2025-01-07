@@ -6,6 +6,7 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   text-decoration: none;
+  @include roboto-regular();
 }
 
 .salad-navigation-header {
@@ -20,42 +21,45 @@
     margin-left: 1vw;
   }
 }
-
+h1 {
+  text-align: center;
+}
 .salad-maker-wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: calc(1vw + 1vh);
+  justify-content: space-between;
+  gap: calc(1.5vw + 1.5vh);
 }
 
 .salad-builder-wrapper {
-  display: grid;
-  grid-template-columns: repeat(4, auto);
-  gap: calc(7.5vw + 7.5vh);
-  row-gap: calc(1vw + 1vh);
-}
-
-.salad-item-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  row-gap: calc(0.5vw + 0.5vh);
-  align-items: center;
+  gap: calc(7.5vw + 7.5vh);
+  row-gap: calc(1vw + 1vh);
+  width: 50%;
+  padding-left: calc(1.5vw + 1.5vh);
+  & .salad-item-wrapper {
+    display: flex;
+    justify-content: space-between;
+    row-gap: calc(0.5vw + 0.5vh);
+    align-items: center;
+  }
 }
+
+
 
 .salad-summary-wrapper {
   display: flex;
-  justify-content: left;
-  border-top: solid 1px black;
-  margin-top: 1vh;
-  padding-right: calc(1.5vw + 1.5vh);
-  padding-left: calc(1.5vw + 1.5vh);
+  flex-direction: column;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  width: 50%;
   & .max-quantity {
     color: red;
   }
-  
-/*   position: absolute;
-  bottom: 10px; */
+  & .salad-summary-ul {
+    width: 50%;
+    list-style-type: none;
+  }
 }
 
 @import './media';

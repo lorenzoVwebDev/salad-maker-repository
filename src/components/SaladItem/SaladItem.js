@@ -32,8 +32,7 @@ function SaladItem({name, image}) {
 
   return (
     <div className="salad-item-wrapper">
-      <h3>{name}</h3>
-      <span>{favourite ? '😋' : ''}</span>
+      <h3>{name}<span>{favourite ? '😋' : ''}</span></h3>
       <button className="item-add-button" onClick={()=> update('add', itemsQuantity)}>
         <span className="item-image" key={name}>
           {image}

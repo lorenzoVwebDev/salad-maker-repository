@@ -21,7 +21,7 @@ function SaladSummary() {
 
   return (
     <div className="salad-summary-wrapper">
-      <ul>
+      <ul className="salad-summary-ul">
       {
         salad.map(item => {
           if (item.maxQuantity) {
@@ -32,12 +32,11 @@ function SaladSummary() {
           }
           
           return (
-          <>
-            <h6></h6>
+          <div className="li-box">
             <li key={item.name}>{item.name} <span>{item.quantity>1? 'x2' : '' }</span><span className="max-quantity">{item.maxQuantity ? `You can add an ingredient up to two times!`: ''}</span><button onClick={()=> 
               update('remove', item.name)
             }>Remove</button></li>
-            </>
+          </div>
           )
         })
       }
