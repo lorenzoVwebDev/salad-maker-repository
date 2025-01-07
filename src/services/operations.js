@@ -40,6 +40,7 @@ export const add = (state, item) => {
 export const remove = (state, item) => {
   let outputState = [];
   for (let object of state) {
+    console.log(object.name, item.name)
     if (object.name === item.name && object?.quantity >= 0) {
       object.quantity -= 1;
       console.log(object.quantity, object.name)
@@ -59,7 +60,7 @@ export const remove = (state, item) => {
         console.log(outputState)
         break;
       }
-    } else {
+    } else if (object.name === item.name) {
       outputState = state;
       break;
     }
