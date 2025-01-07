@@ -30,7 +30,8 @@ const [ salad, setSalad ] = useReducer(reducer, []);
 const [totQuantity, setTotalQuantity] = useState()
 return (
   <>
-    <h1 className="salad-maker-wrapper"><span>🍎</span>Build your own salad!<span>🥦</span></h1>
+  <h1 ><span>🍎</span>Build your own salad!<span>🥦</span></h1>
+  <div className="salad-maker-wrapper">
       <SaladContext.Provider 
         value={{
           salad,
@@ -42,6 +43,7 @@ return (
         <SaladBuilder/>
         <SaladSummary/>
       </SaladContext.Provider>
+  </div>
   </>
 )
 }

@@ -42,7 +42,6 @@ export const remove = (state, item) => {
   for (let object of state) {
     if (object.name === item.name && object?.quantity >= 0) {
       object.quantity -= 1;
-      console.log(object.quantity, object.name)
       if (object.quantity <= 0) {
         outputState = [...state.filter(products => {
           return products.name != item.name
@@ -56,10 +55,9 @@ export const remove = (state, item) => {
             return products
           }
         })]
-        console.log(outputState)
         break;
       }
-    } else {
+    } else if (object.name === item.name) {
       outputState = state;
       break;
     }

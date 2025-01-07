@@ -1,6 +1,7 @@
 import UserContext from "../Usercontext/Usercontext";
 import Navigation from "../Navigation/Navigation"
 import SaladMaker from "../Saladmaker/Saladmaker";
+import { Footer} from '../common/'
 
 const user = {
   name: 'Lorenzo',
