@@ -1,26 +1,26 @@
 export const ingredients = [
   {
     image: '🍎',
-    name: 'apple',
+    name: 'Apple',
   },
   {
     image: '🥑',
-    name: 'avocado',
+    name: 'Avocado',
   },
   {
     image: '🥦',
-    name: 'broccoli',
+    name: 'Broccoli',
   },
   {
     image: '🥕',
-    name: 'carrot',
+    name: 'Carrot',
   },
   {
     image: '🍷',
-    name: 'red wine dressing',
+    name: 'Red wine dressing',
   },
   {
     image: '🍚',
-    name: 'seasoned rice',
+    name: 'Seasoned rice',
   },
 ];

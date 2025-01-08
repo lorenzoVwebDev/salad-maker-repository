@@ -1,7 +1,7 @@
 import { createContext, useReducer, useState } from 'react';
 import { ingredients } from '../../data/saladData'
 import SaladBuilder from '../Saladbuilder/Saladbuilder';
-import SaladSummary from '../Saladsummary/Saladsummary';
+import SaladSummary from '../Saladsummary/SaladSummary';
 import { add, remove } from '../../services/operations';
 
 export const SaladContext = createContext()

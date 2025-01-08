@@ -13,6 +13,11 @@ function SaladBuilder() {
             />
         )
       })}
+      <hr/>
+      <div className="button-request-wrapper">
+        <button>Request Your Salad!</button>
+      </div>
+      <hr />
     </div>
   )
 }

@@ -23,6 +23,8 @@
 }
 h1 {
   text-align: center;
+  margin-bottom: calc(1vw + 1vh);
+  @include roboto-bold(font-size, calc(2vw + 2vh));
 }
 .salad-maker-wrapper {
   display: flex;
@@ -43,24 +45,100 @@ h1 {
     row-gap: calc(0.5vw + 0.5vh);
     align-items: center;
   }
+
+  & .button-request-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    & > button {
+      width: 40%;
+      padding-top: calc(0.5vw + 0.5vh);
+      padding-bottom: calc(0.5vw + 0.5vh);
+      padding-left: calc(0.1vw + 0.5vh);
+      padding-right: calc(0.1vw + 0.5vh);
+      border: none;
+      border-radius: 25px;
+      background-color: rgb(0, 132, 107);
+      color: white;
+      box-shadow: 5px 5px 5px rgb(209, 208, 208);
+      transition: transform 0.2s;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.2);
+      }
+      &:active {
+        background-color: rgb(127, 255, 110);
+      }
+    }
+  }
 }
-
-
 
 .salad-summary-wrapper {
   display: flex;
   flex-direction: column;
+  gap: calc(7.5vw + 7.5vh);
+  row-gap: calc(1vw + 1vh);
   padding-left: 2vw;
   padding-right: 2vw;
   width: 50%;
-  & .max-quantity {
-    color: red;
-  }
   & .salad-summary-ul {
-    width: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: calc(7.5vw + 7.5vh);
+    row-gap: calc(1vw + 1vh);
     list-style-type: none;
+    & .li-box {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      row-gap: calc(0.5vw + 0.5vh);
+      align-items: center;
+      border: solid 1px gray;
+      border-radius: 25px;
+      padding: 1vw 2vw 1vw 1vw;
+      & .max-quantity {
+        position: absolute;
+        top: 0;
+/*         color: black; */
+        @include roboto-bold;
+        transition: all 0.2s;
+        display: none;
+      }
+      & button {
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.2s;
+        &:hover {
+          background-color: red;  
+        }
+      }
+    }
+
+    & .max-quantity-alert {
+      &:not(:empty) {
+        animation-name: disappear;
+        animation-duration: 5s;
+        animation-fill-mode: forwards;
+        color: red;
+      }
+    }
   }
 }
+
+@keyframes disappear {
+  0% {
+    opacity: 0;  /* Fully visible */
+    visibility: visible;  /* Ensure it's visible initially */
+  }
+  50% {
+    opacity: 1;  /* Half transparent */
+  }
+  100% {
+    opacity: 0;  /* Fully transparent */ /* Prevent interactions after disappearing */
+  }
+}
+
 
 @import './media';
 
