@@ -14,7 +14,7 @@ function SaladBuilder() {
       quantity+= ingredient.quantity
     })
     try {
-    const response = await fetch('http://localhost:3500/image', {
+    const response = await fetch('https://backend.lorenzo-viganego/saladimages', {
       method: "POST",
       body: JSON.stringify({
         arrayLength: arrayLength,

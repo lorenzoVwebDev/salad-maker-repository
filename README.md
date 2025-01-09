@@ -1,6 +1,17 @@
 # [Salad Maker](https://www.lorenzo-viganego.com/#portfolio)
-  ⚠️ PROJECT IN DEVELOPMENT
+  A Salad Maker similar to the glovo food builder
 ![Features](https://img.shields.io/badge/Features-My%20frontend's%20features-green)
+- [useContext and createContext hook to provide user specifics among components](https://github.com/lorenzoVwebDev/salad-maker-repository/blob/master/src/components/App/App.js)
+- [Request to the backend for the url image based on both a quantity and salad array's length condition](https://github.com/lorenzoVwebDev/salad-maker-repository/blob/master/src/components/Saladbuilder/Saladbuilder.js)
+- [Mapping over the ingredients array to create the salad items (from a single component)](https://github.com/lorenzoVwebDev/salad-maker-repository/blob/master/src/components/Saladbuilder/Saladbuilder.js)
+- [useReducer hook used to manage the overall quantity & update function to updated several states all at once](https://github.com/lorenzoVwebDev/salad-maker-repository/blob/master/src/components/SaladItem/SaladItem.js)
+- [useReducer hook used to add or remove quantity based on the action type](https://github.com/lorenzoVwebDev/salad-maker-repository/blob/master/src/components/Saladmaker/Saladmaker.js)
+- [SaladContext used to share both states and functions to set states among components](https://github.com/lorenzoVwebDev/salad-maker-repository/blob/master/src/components/Saladmaker/Saladmaker.js)
+- [Dynamic JSX based on the server response status and the overall quantity](https://github.com/lorenzoVwebDev/salad-maker-repository/blob/master/src/components/Saladmaker/Saladmaker.js)
+- [JSS used to dynamically display JSX elements](https://github.com/lorenzoVwebDev/salad-maker-repository/blob/master/src/components/Saladmaker/Saladmaker.js)
+- [useContext used to import the useReduce hook's array and set it by using the update function](https://github.com/lorenzoVwebDev/salad-maker-repository/blob/master/src/components/SaladSummary/SaladSummary.js)
+- [JSS used to dynamically display JSX elements based on the item.maxQuantity property](https://github.com/lorenzoVwebDev/salad-maker-repository/blob/master/src/components/SaladSummary/SaladSummary.js)
+- [Operations' logic to handle the addition and removal of ingredients](https://github.com/lorenzoVwebDev/salad-maker-repository/blob/master/src/services/operations.js)
 
 # Connect with me
 
