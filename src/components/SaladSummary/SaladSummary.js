@@ -45,7 +45,6 @@ function SaladSummary() {
       <ul className="salad-summary-ul">
       {
         salad.map(item => {
-          console.log(item.maxQuantity)
           if (item.maxQuantity) {
             setTimeout(() => {
               item.maxQuantity = false;
