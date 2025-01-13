@@ -15,7 +15,7 @@ function FetchImage (salad) {
       quantity+= ingredient.quantity
     })
     try {
-    const response = await fetch(`${backend}saladimages`, {
+    const response = await fetch(`${localhost}saladimages`, {
       method: "POST",
       body: JSON.stringify({
         arrayLength: arrayLength,
@@ -35,7 +35,7 @@ function FetchImage (salad) {
   }
   }
 
-  if (arrayLength > 0) {
+  if (salad[0] != 'first') {
     request() 
   }
 

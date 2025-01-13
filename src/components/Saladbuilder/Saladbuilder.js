@@ -6,11 +6,13 @@ import { FetchImage } from '../CustomHooks'
 
 function SaladBuilder() {
   const { setSaladImage, salad }  = useContext(SaladContext);
-  const [ updatedsalad, setUpdatedsalad] = useState([]);
+  const [ updatedsalad, setUpdatedsalad] = useState(['first']);
   const [data] = FetchImage(updatedsalad)
 
   useEffect(() => {
     let isMounted = true;
+    console.log(updatedsalad)
+    console.log(data)
     if (updatedsalad != []) setSaladImage(data);
     return () => isMounted = false;
   }, [data])

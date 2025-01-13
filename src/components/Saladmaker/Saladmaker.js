@@ -1,4 +1,4 @@
-import { createContext, useReducer, useState } from 'react';
+import { createContext, useReducer, useState, lazy, Suspence } from 'react';
 import { ingredients } from '../../data/saladData'
 import SaladBuilder from '../Saladbuilder/Saladbuilder';
 import SaladSummary from '../Saladsummary/SaladSummary';
@@ -36,7 +36,10 @@ function SaladMaker() {
 const [ salad, setSalad ] = useReducer(reducer, []);
 const [totQuantity, setTotalQuantity] = useState();
 const [saladImage, setSaladImage ] = useState({});
-const classNames = useStyles()
+const classNames = useStyles();
+let bool = false;
+salad.length > 0 ? bool = true : bool = false; 
+
 return (
   <>
   <h1 ><span>🍎</span>Build your own salad!<span>🥦</span></h1>
@@ -51,7 +54,7 @@ return (
         }}
       >
         <SaladBuilder/>
-        <SaladSummary/>
+          <SaladSummary/>
       </SaladContext.Provider>
   </div>
   {saladImage.responseStatus != 401 ? <div className={saladImage.url? "salad-image-wrapper":classNames.saladImageWrapper}><div className="salad-image-container">
