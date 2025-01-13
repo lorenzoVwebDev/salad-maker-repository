@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ingredients } from '../../data/saladData'
 import SaladItem from "../SaladItem/SaladItem";
 import { SaladContext } from '../Saladmaker/Saladmaker';
@@ -6,7 +6,14 @@ import { FetchImage } from '../CustomHooks'
 
 function SaladBuilder() {
   const { setSaladImage, salad }  = useContext(SaladContext);
-  const [data] = FetchImage(salad)
+  const [ updatedsalad, setUpdatedsalad] = useState([]);
+  const [data] = FetchImage(updatedsalad)
+
+  useEffect(() => {
+    let isMounted = true;
+    if (updatedsalad != []) setSaladImage(data);
+    return () => isMounted = false;
+  }, [data])
 
   return (
     <div className="salad-builder-wrapper">
@@ -22,7 +29,7 @@ function SaladBuilder() {
       <hr/>
       <div className="button-request-wrapper">
         <button onClick={() => {
-          setSaladImage(data);
+          setUpdatedsalad(salad)
         }}>Request Your Salad!</button>
       </div>
       <hr/>

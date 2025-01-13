@@ -3,7 +3,7 @@ const backend = 'https://backend.lorenzo-viganego/';
 const localhost = 'http://localhost:3000/'
 
 function FetchImage (salad) {
-  const [data, setData] = useState();
+  const [data, setData] = useState({});
 
   useEffect(() => {
     let isMounted = true;
@@ -35,7 +35,10 @@ function FetchImage (salad) {
   }
   }
 
-  request();
+  if (arrayLength > 0) {
+    request() 
+  }
+
   return () => isMounted = false;
   
   }, [salad])
