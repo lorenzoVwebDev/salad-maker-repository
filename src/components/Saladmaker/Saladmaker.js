@@ -4,7 +4,6 @@ import SaladBuilder from '../Saladbuilder/Saladbuilder';
 import SaladSummary from '../Saladsummary/SaladSummary';
 import { add, remove } from '../../services/operations';
 import { createUseStyles } from 'react-jss';
-import { FetchImage } from '../CustomHooks';
 
 const useStyles = createUseStyles({
   saladImageWrapper: {

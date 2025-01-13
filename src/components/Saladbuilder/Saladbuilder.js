@@ -2,11 +2,37 @@ import { useContext } from 'react';
 import { ingredients } from '../../data/saladData'
 import SaladItem from "../SaladItem/SaladItem";
 import { SaladContext } from '../Saladmaker/Saladmaker';
+import { FetchImage } from '../CustomHooks'
 
 function SaladBuilder() {
   const { setSaladImage, salad }  = useContext(SaladContext);
+  const [data] = FetchImage(salad)
 
-  const requestImage = async (salad) =>  {
+  return (
+    <div className="salad-builder-wrapper">
+      {ingredients.map(ingredient => {
+        return (
+            <SaladItem
+              key={ingredient.name}
+              name={ingredient.name}
+              image={ingredient.image}
+            />
+        )
+      })}
+      <hr/>
+      <div className="button-request-wrapper">
+        <button onClick={() => {
+          setSaladImage(data);
+        }}>Request Your Salad!</button>
+      </div>
+      <hr/>
+    </div>
+  )
+}
+
+export default SaladBuilder;
+
+/*   const requestImage = async (salad) =>  {
     const arrayLength = salad.length;
 
     let quantity = 0;
@@ -34,27 +60,4 @@ function SaladBuilder() {
     console.error(error)
   }
 
-  }
-  return (
-    <div className="salad-builder-wrapper">
-      {ingredients.map(ingredient => {
-        return (
-            <SaladItem
-              key={ingredient.name}
-              name={ingredient.name}
-              image={ingredient.image}
-            />
-        )
-      })}
-      <hr/>
-      <div className="button-request-wrapper">
-        <button onClick={() => {
-          requestImage(salad);
-        }}>Request Your Salad!</button>
-      </div>
-      <hr/>
-    </div>
-  )
-}
-
-export default SaladBuilder;
+  } */
