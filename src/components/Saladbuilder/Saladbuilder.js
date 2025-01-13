@@ -35,8 +35,6 @@ function SaladBuilder() {
   }
 
   }
-
-  //hello
   return (
     <div className="salad-builder-wrapper">
       {ingredients.map(ingredient => {
