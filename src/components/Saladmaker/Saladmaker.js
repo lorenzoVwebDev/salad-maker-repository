@@ -1,7 +1,6 @@
-import { createContext, useReducer, useState, lazy, Suspence } from 'react';
+import { createContext, useReducer, useState, lazy, Suspense } from 'react';
 import { ingredients } from '../../data/saladData'
 import SaladBuilder from '../Saladbuilder/Saladbuilder';
-import SaladSummary from '../Saladsummary/SaladSummary';
 import { add, remove } from '../../services/operations';
 import { createUseStyles } from 'react-jss';
 
@@ -9,6 +8,10 @@ const useStyles = createUseStyles({
   saladImageWrapper: {
     display: 'none'
   }
+})
+
+const SaladSummary = lazy(() => {
+  return import('../Saladsummary/SaladSummary')
 })
 
 export const SaladContext = createContext()
@@ -38,8 +41,7 @@ const [totQuantity, setTotalQuantity] = useState();
 const [saladImage, setSaladImage ] = useState({});
 const classNames = useStyles();
 let bool = false;
-salad.length > 0 ? bool = true : bool = false; 
-
+salad.length > 0 ? bool = true : bool = false;
 return (
   <>
   <h1 ><span>🍎</span>Build your own salad!<span>🥦</span></h1>
@@ -54,7 +56,9 @@ return (
         }}
       >
         <SaladBuilder/>
-          <SaladSummary/>
+        <Suspense>
+          {bool && <SaladSummary/>}
+        </Suspense>
       </SaladContext.Provider>
   </div>
   {saladImage.responseStatus != 401 ? <div className={saladImage.url? "salad-image-wrapper":classNames.saladImageWrapper}><div className="salad-image-container">

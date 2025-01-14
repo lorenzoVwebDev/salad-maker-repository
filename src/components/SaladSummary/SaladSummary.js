@@ -53,8 +53,8 @@ function SaladSummary() {
           }
           
           return (
-            <div className="li-box">
-            <h3 key={item.name} >{item.name} <span>{item.quantity>1? 'x2' : '' }</span></h3><span className={`${item.maxQuantity? classes.maxQuantityJss : 'max-quantity'}`}>You can add an ingredient up to two times!</span><button onClick={()=> 
+            <div className="li-box" key={item.name}>
+            <h3  >{item.name} <span>{item.quantity>1? 'x2' : '' }</span></h3><span className={`${item.maxQuantity? classes.maxQuantityJss : 'max-quantity'}`}>You can add an ingredient up to two times!</span><button onClick={()=> 
               update('remove', item.name)
             }>➖</button>
             </div>
