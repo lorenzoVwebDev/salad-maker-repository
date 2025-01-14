@@ -13,7 +13,8 @@
 - [JSS used to dynamically display JSX elements based on the item.maxQuantity property](https://github.com/lorenzoVwebDev/salad-maker-repository/blob/master/src/components/SaladSummary/SaladSummary.js)
 - [Operations' logic to handle the addition and removal of ingredients](https://github.com/lorenzoVwebDev/salad-maker-repository/blob/master/src/services/operations.js)
 
-- [Improvede with useEffect to handle request only when the dependency changes](https://github.com/lorenzoVwebDev/salad-maker-repository/blob/newhooks/src/components/CustomHooks/FetchImage/FetchImage.js)
+- [Improved with useEffect to handle request only when the dependency changes](https://github.com/lorenzoVwebDev/salad-maker-repository/blob/newhooks/src/components/CustomHooks/FetchImage/FetchImage.js)
+- [Improved with lazy and Suspense to load the SaladSummary components once salad.length > 0](https://github.com/lorenzoVwebDev/salad-maker-repository/blob/master/src/components/Saladmaker/Saladmaker.js)
 
 # Connect with me
 
