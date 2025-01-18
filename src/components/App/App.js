@@ -1,7 +1,7 @@
 import UserContext from "../Usercontext/Usercontext";
 import Navigation from "../Navigation/Navigation"
 import SaladMaker from "../Saladmaker/Saladmaker";
-import { Footer} from '../common/'
+import { Foote, GitRepositoryHeader} from '../common/'
 
 const user = {
   name: 'Lorenzo',
@@ -14,6 +14,7 @@ const user = {
 function App() {
   return (
     <UserContext.Provider value={user}>
+      <GitRepositoryHeader/>
       <Navigation/>
       <SaladMaker/>
     </UserContext.Provider>
