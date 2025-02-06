@@ -15,7 +15,7 @@ function FetchImage (salad) {
       quantity+= ingredient.quantity
     })
     try {
-    const response = await fetch(`${backend}saladimages`, {
+    const response = await fetch(`${backend}saladimages/`, {
       method: "POST",
       body: JSON.stringify({
         arrayLength: arrayLength,
